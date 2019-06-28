@@ -11,17 +11,17 @@ class PostsController < ApplicationController
 		@post = Post.new
 	end
 
-	
+
 	def edit
 	  @post = Post.find(params[:id])
 	end
-		
+
 	# def create
 	#   @post = Post.new(params["post"])
 	#   @post.save
 	#   redirect_to post_path(@post)
 	# end
-	# 
+	#
 	# def update
 	#   @post = Post.find(params[:id])
 	#   @post.update(params["post"])
@@ -34,13 +34,13 @@ class PostsController < ApplicationController
 	  @post.save
 	  redirect_to post_path(@post)
 	end
-	 
+
 	def update
 	  @post = Post.find(params[:id])
 	  @post.update(post_params(:title))
 	  redirect_to post_path(@post)
 	end
-	 
+
 	private
 	def post_params(*args)
 	  params.require(:post).permit(*args)
